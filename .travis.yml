@@ -1,9 +1,13 @@
 language: node_js
 node_js:
   - 12.18.4
+
 cache:
   directories:
   - node_modules
+
+install:
+  - npm ci
 
 script:
   - npm run build
@@ -13,4 +17,4 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   on:
-    branch: main  
+    branch: gh-pages
